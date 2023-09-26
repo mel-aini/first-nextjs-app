@@ -6,15 +6,17 @@ async function Posts() {
   const posts = await result.json();
 
   return (
-    <div>
+    <div className="w-full mx-auto flex flex-col gap-5 mt-10">
       {posts.map((elem, index) => {
         return (
-          <Link key={index} href={`/posts/${elem.id}`}>
-            <div>
-              <h1>{elem.title}</h1>
-              <p>{elem.body}</p>
-            </div>
-          </Link>
+          <div key={index} className="p-5 border border-white">
+            <Link href={`/posts/${elem.id}`}>
+              <div>
+                <h1 className="font-bold">{elem.title}</h1>
+                <p>{elem.body}</p>
+              </div>
+            </Link>
+          </div>
         );
       })}
     </div>

@@ -2,12 +2,15 @@ import Link from "next/link";
 
 function Navbar() {
   return (
-    <main>
-      <h1>Navbar</h1>
-      <Link href="/posts">go to posts</Link>
-      <br />
-      <Link href="/">go to home</Link>
-    </main>
+    <header className="bg-blue-500 w-full">
+      <div className="wrapper w-[80%] h-[50px] mx-auto flex justify-between items-center">
+        <h1>Navbar</h1>
+        <div className="flex gap-5">
+          <Link href="/">home</Link>
+          <Link href="/posts">posts</Link>
+        </div>
+      </div>
+    </header>
   );
 }
 

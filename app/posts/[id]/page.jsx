@@ -1,7 +1,7 @@
 async function Post(params) {
+  const id = params.params.id;
   let post = {};
   try {
-    const id = params.params.id;
     const response = await fetch(
       `https://jsonplaceholder.typicode.com/posts/${id}`
     );
@@ -11,8 +11,9 @@ async function Post(params) {
   }
 
   return (
-    <div>
-      <h1>{post.title}</h1>
+    <div className="w-full mx-auto mt-5">
+      <h1 className="text-xl font-bold mb-3">Post {id}</h1>
+      <h1 className="text-xl font-bold mb-3">{post.title}</h1>
       <p>{post.body}</p>
     </div>
   );
